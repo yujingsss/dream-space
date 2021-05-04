@@ -241,13 +241,15 @@ function keyPressed() {
     num = 2;
     setColor(0);
     polySynth.triggerAttackRelease(["D4", "F4", "A4"], synthDuration);
+    vis(1, "white");
+    audioEffect(500, 0.4);
 
   }
   if (key === "3") {
     num = 3;
     setColor(2);
     polySynth.triggerAttackRelease(["E4", "G4", "B4"], synthDuration);
-    vis(1, "white");
+    vis(5, "white");
     audioEffect(500, 0.4);
   }
   if (key === "4") {
@@ -398,6 +400,13 @@ function vis(index, col, col2) {
     triangles[1].style.animation = "Triangle2 2s ease-in-out";
     triangles[0].style.animationFillMode = "forwards";
     triangles[1].style.animationFillMode = "forwards";
+  }
+  if (index == 5) {
+    flexCenter(index);
+    let lineDiv = document.getElementsByClassName("vertical-line")[0];
+    lineDiv.style.background = "white";
+    lineDiv.style.animation = "VerticalLine 2s ease-in-out";
+    lineDiv.style.animationFillMode = "forwards";
   }
 
   setTimeout(function() {
