@@ -242,7 +242,7 @@ function keyPressed() {
     setColor(0);
     polySynth.triggerAttackRelease(["D4", "F4", "A4"], synthDuration);
     vis(1, "white");
-    audioEffect(500, 0.4);
+    audioEffect(350, 0.4);
 
   }
   if (key === "3") {
