@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+#intro {
+  background-color: rgb(198,179,255);
+  background: linear-gradient(90deg, rgba(198,179,255,1) 14%, rgba(179,255,153,1) 52%, rgba(85,107,199,1) 100%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+}
+#intro > div {
+  mix-blend-mode: difference;
+}
+#intro-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+#intro > div > p {
+  margin: 5px;
+  font-weight: 400;
+}
+@keyframes fade {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.vis-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: none;
+  flex-direction: row;
+  mix-blend-mode: difference;
+}
+@keyframes visible {
+  0% {visibility: hidden; opacity: 0;}
+  100% {visibility: visible; opacity: 1;}
+}
+@keyframes notVisible {
+    0% {visibility: visible; opacity: 1;}
+  100% {visibility: hidden; opacity: 0;}
+}
+
+
+.ripple {
+  border-radius: 30vw;
+  width: 10vw;
+  height: 10vw;
+}
+@keyframes Ripple {
+  0% {transform: scale(1,1);}
+  80% {transform: scale(3,3);}
+  90% {transform: scale(4,4);}
+  95% {opacity: 1;}
+  100% {transform: scale(3,3); opacity: 0;}
+}
+
+.rect {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.rect > div {
+  margin: 2vw;
+}
+@keyframes Rect{
+  0% {transform: rotate(0deg);}
+  85% {transform: rotate(180deg);}
+  90% {opacity: 1;}
+  100% {transform: rotate(360deg); opacity: 0;}
+}
+
+.line {
+  width: 100%;
+  height: 0%;
+}
+@keyframes Line {
+  0% {height: 5%;}
+  60% {height: 100%;}
+  65% {height: 100%;}
+  95% {opacity: 1;}
+  100% {height: 0%; opacity: 0;}
+}
+
+.multi-triangle {
+  overflow: hidden;
+  width: 80vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.multi-triangle > div {
+  margin: 1em;
+  width: 0;
+  height: 0;
+  border-bottom-width: 20px;
+  border-bottom-style: solid;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+@keyframes multiTri {
+  0% {transform: rotate(0deg);}
+  20% {transform: rotate(270deg);}
+  50% {transform: rotate(0deg);}
+  95% {ppacity: 1;}
+  100% {transform: rotate(180deg); opacity: 0;}
+}
+
+.triangle > div {
+  position: absolute;
+  top: 0;
+  mix-blend-mode: multiply
+}
+.triangle > div:nth-of-type(1) {
+  width:0;
+  height:0;
+  border-left-width: 100vw;
+  border-left-style: solid;
+  border-top:100vh solid transparent;
+  border-bottom:0 solid transparent;
+}
+.triangle > div:nth-of-type(2){
+  width:0;
+  height:0;
+  border-right-width: 100vw;
+  border-right-style: solid;
+  border-top:100vh solid transparent;
+  border-bottom:0 solid transparent;
+}
+
+@keyframes Triangle1 {
+  0% {border-left-width:100vw; border-left-style:solid; border-top:0 solid transparent; border-bottom:100vh solid transparent;}
+  30% {border-left-width:100vw; border-left-style:solid; border-top:0 solid transparent; border-bottom:100vh solid transparent;}
+  80% {border-left-width:100vw; border-left-style:solid; border-top:100vh solid transparent; border-bottom:0 solid transparent; opacity: 1;}
+  100% {border-left-width:100vw; border-left-style:solid; border-top:100vh solid transparent; border-bottom:0 solid transparent; opacity: 0;}
+}
+@keyframes Triangle2 {
+  0% {border-right-width:100vw; border-right-style:solid; border-top:100vh solid transparent; border-bottom:0 solid transparent;}
+  50% {border-right-width:100vw; border-right-style:solid; border-top:0 solid transparent; border-bottom:100vh solid transparent;}
+  75% {opacity: 1;}
+  100% {border-right-width:100vw; border-right-style:solid; border-top:0 solid transparent; border-bottom:100vh solid transparent; opacity: 0;}
+}
